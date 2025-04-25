@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0 transition-transform hover:scale-105">
                     <h1 className="text-2xl text-black md:text-3xl font-serif font-bold">GRAVO</h1>
-                    <p className="text-xs text-gravo-gray tracking-wider text-gold">REDEFINING MEN'S LUXURY</p>
+                    <p className="hidden sm:text-xs sm:tracking-wider sm:text-gold">REDEFINING MEN'S LUXURY</p>
                 </Link>
 
                 <nav className='hidden sm:block'>
