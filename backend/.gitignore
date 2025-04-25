@@ -1,0 +1,13 @@
+# dependencies
+/data
+/node_modules
+/uploads
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
