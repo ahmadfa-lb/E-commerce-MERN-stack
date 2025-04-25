@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0 transition-transform hover:scale-105">
                     <h1 className="text-2xl text-black md:text-3xl font-serif font-bold">GRAVO</h1>
-                    <p className="hidden sm:text-xs sm:tracking-wider sm:text-gold">REDEFINING MEN'S LUXURY</p>
+                    <p className="text-[10px] sm:text-xs sm:tracking-wider text-gold">REDEFINING MEN'S LUXURY</p>
                 </Link>
 
                 <nav className='hidden sm:block'>
@@ -47,7 +47,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                <div className='flex items-center gap-4 md:gap-8'>
+                <div className='flex items-center justify-center gap-4 md:gap-8'>
                     <button
                         onClick={() => { setShowSearch(true); navigate('/collection') }}
                         className='w-5 h-5 opacity-70 hover:opacity-100 transition-opacity duration-200'
