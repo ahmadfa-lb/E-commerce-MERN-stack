@@ -47,7 +47,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                <div className='flex items-center justify-center gap-4 md:gap-8'>
+                <div className='flex items-center justify-center gap-5 md:gap-8'>
                     <button
                         onClick={() => { setShowSearch(true); navigate('/collection') }}
                         className='w-5 h-5 opacity-70 hover:opacity-100 transition-opacity duration-200'
