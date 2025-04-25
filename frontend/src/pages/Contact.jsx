@@ -40,7 +40,6 @@ const Contact = () => {
       // Connect to our backend API
       const response = await axios.post(`${backendUrl}/api/contact/send-email`, {
         ...formData,
-        recipient: 'admin@GRAVO.com', // This should be your email
       });
       
       if (response.data.success) {
