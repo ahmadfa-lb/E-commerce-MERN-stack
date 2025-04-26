@@ -245,7 +245,7 @@ const Orders = ({ token }) => {
                     <DollarSign size={12} />
                     {order.payment ? 'Paid' : 'Mark as Paid'}
                   </button>
-                  <span className="font-semibold text-gray-900">{currency}{order.amount}</span>
+                  <span className="font-semibold text-gray-900">{currency}{(order.amount).toFixed(2)}</span>
                 </div>
               </div>
 

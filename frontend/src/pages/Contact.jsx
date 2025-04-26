@@ -131,7 +131,7 @@ const Contact = () => {
           <div className='pt-4 border-t border-gray-200'>
             <p className='text-gray-700 mb-4'>Follow us on social media or reach out directly via WhatsApp:</p>
             <a 
-              href='https://wa.me/03520863' 
+              href='https://wa.me/+96103520863' 
               rel="noopener noreferrer" 
               className='inline-flex items-center gap-2 text-white py-3 px-6 bg-[#25D366] rounded-md hover:bg-opacity-90 transition-colors shadow-md'
             >
