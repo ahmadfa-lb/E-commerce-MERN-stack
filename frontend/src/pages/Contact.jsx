@@ -104,7 +104,7 @@ const Contact = () => {
                 <div>
                   <p className='font-medium text-gray-800 bg-cream rounded-full px-4 py-1 inline-block'>Phone</p>
                   <p className='text-gray-600 mt-1'>+961 03 520 863</p>
-                  <p className='text-gray-500 text-sm text-gray'>Monday to Friday | 24/7</p>
+                  <p className='text-gray-500 text-sm text-gray'>Monday to Sunday | 24/7</p>
                 </div>
               </div>
               

@@ -172,6 +172,7 @@ const Product = () => {
                 `Product: ${productData.name}\n` +
                 `Price: ${currency}${hasDiscount ? formatPrice(discountedPrice) : formatPrice(productData.price)}\n` +
                 `Size: ${size || 'Not selected'}\n\n` +
+                `product's Image: ${productData.image[0] || 'Not selected'}\n\n` +
                 `Could you provide more information about this item?`
               );
               window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
