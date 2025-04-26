@@ -30,7 +30,7 @@ const Footer = () => {
             <p className='text-lg sm:text-xl font-medium mb-3 sm:mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-2 text-gray-600'>
               <li className='cursor-pointer duration-200 hover:text-gold hover:underline transition-colors'>+961 03 520 863</li>
-              <li className='cursor-pointer duration-200 hover:text-gold hover:underline transition-colors'>contact@GRAVOyou.com</li>
+              <li className='cursor-pointer duration-200 hover:text-gold hover:underline transition-colors'>gravo.store.service@gmail.com</li>
             </ul>
           </div>
 

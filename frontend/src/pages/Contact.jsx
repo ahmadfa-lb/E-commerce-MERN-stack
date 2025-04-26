@@ -112,7 +112,7 @@ const Contact = () => {
                 <div className='text-gray-600 mt-1'><HiOutlineMail size={20} className='text-gold'/></div>
                 <div>
                   <p className="font-medium text-gray-800 bg-cream rounded-full px-4 py-1 inline-block">Email</p>
-                  <p className='text-gray-600 mt-1'>admin@GRAVO.com</p>
+                  <p className='text-gray-600 mt-1'>gravo.store.service@gmail.com</p>
                   <p className='text-gray-500 text-sm text-gray'>We'll respond as soon as possible</p>
                 </div>
               </div>
