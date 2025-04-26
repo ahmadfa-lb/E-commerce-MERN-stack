@@ -121,7 +121,7 @@ const Contact = () => {
                 <div className='text-gray-600 mt-1'><FaInstagram size={20} className='text-gold'/></div>
                 <div className='flex flex-col'>
                   <p className='font-medium text-gray-800 bg-cream rounded-full px-4 py-1 inline-block'>Instagram</p>
-                  <a href='#' className='text-gray-600 hover:text-blue-500 transition-colors mt-1'>@GRAVO</a>
+                  <a href='https://www.instagram.com/gravo.lb/' className='text-gray-600 hover:text-blue-500 transition-colors mt-1'>@GRAVO</a>
                 </div>
               </div>
             </div>
