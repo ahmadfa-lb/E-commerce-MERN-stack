@@ -69,7 +69,7 @@ const Hero = () => {
                             key={index}
                             onClick={() => goToImage(index)}
                             className={`w-3 h-3 rounded-full transition-all ${
-                                index === currentImageIndex ? 'bg-gold w-5' : 'bg-lightgray'
+                                index === currentImageIndex ? 'bg-gold w-5' : 'bg-cream'
                             }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />
