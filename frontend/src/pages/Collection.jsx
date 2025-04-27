@@ -138,9 +138,16 @@ const Collection = () => {
         {/* Map Products */}
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
           {
-            filterProducts.map((item,index)=>(
-              <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} discount={item.discount} />
-            ))
+            filterProducts.length > 0 ? (
+              filterProducts.map((item,index)=>(
+                <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} discount={item.discount} />
+              ))
+            ) : (
+              <div className="col-span-full flex flex-col items-center justify-center py-10">
+                <p className="text-xl font-semibold text-gray-600">Coming Soon!</p>
+                <p className="text-sm text-gray-500">No products available in this category at the moment.</p>
+              </div>
+            )
           }
         </div>
       </div>
