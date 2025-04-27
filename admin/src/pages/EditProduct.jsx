@@ -217,6 +217,7 @@ const handleImageChange = (e) => {
             <input
               type="number"
               name="price"
+              min={0}
               value={product.price}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded focus:ring-gold focus:border-gold"
@@ -284,7 +285,7 @@ const handleImageChange = (e) => {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Sizes</label>
           <div className="flex flex-wrap gap-3">
-            {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
+            {['S', 'M', 'L', 'XL', 'XXL', 'Out Of Stock'].map(size => (
               <div key={size} className="flex items-center">
                 <input
                   type="checkbox"

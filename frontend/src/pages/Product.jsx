@@ -158,13 +158,25 @@ const Product = () => {
             )}
           </div>
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
-          <div className='flex flex-col gap-4 my-8'>
+          {/* <div className='flex flex-col gap-4 my-8'>
             <p>Select Size</p>
             <div className='flex gap-2'>
               {productData.sizes.map((item, index) => (
                 <button onClick={() => setSize(item)} className={`bg-cream text-gray-700 border-2  px-4 py-2 rounded ${item === size ? 'border-gold' : ''}`} key={index}>{item}</button>
               ))}
             </div>
+          </div> */}
+          <div className='flex flex-col gap-4 my-8'>
+            <p>Select Size</p>
+            {productData.sizes.includes("Out Of Stock") || productData.sizes[0] === "Out Of Stock" ? (
+              <div className="text-red-600 font-medium">This product is currently out of stock</div>
+            ) : (
+              <div className='flex gap-2'>
+                {productData.sizes.map((item, index) => (
+                  <button onClick={() => setSize(item)} className={`bg-cream text-gray-700 border-2 px-4 py-2 rounded ${item === size ? 'border-gold' : ''}`} key={index}>{item}</button>
+                ))}
+              </div>
+            )}
           </div>
           <div className='flex flex-col sm:w-60  gap-4'>
           <button onClick={() => addToCart(productData._id, size)} className='bg-black hover:scale-[.99] transition-transform duration-200 rounded text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>

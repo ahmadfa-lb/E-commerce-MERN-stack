@@ -86,7 +86,7 @@ const Add = ({ token }) => {
     }
   };
 
-  const sizeOptions = ["S", "M", "L", "XL", "XXL"];
+  const sizeOptions = ["S", "M", "L", "XL", "XXL", "Out Of Stock"];
 
   return (
     <div className="bg-white rounded-lg shadow-md p-3 sm:p-6 w-full max-w-full">
