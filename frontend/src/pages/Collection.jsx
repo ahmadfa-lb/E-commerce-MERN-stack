@@ -74,6 +74,10 @@ const Collection = () => {
 
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(()=>{
       applyFilter();
   },[category,subCategory,search,showSearch,products])

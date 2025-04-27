@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
 import { ShopContext } from '../context/ShopContext'
@@ -67,7 +67,11 @@ const PlaceOrder = () => {
             console.log(error)
             toast.error(error.message)
         }
-    }
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <div className="bg-gray-50 min-h-screen py-8">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import { LuPhone, LuMapPin, LuSend } from "react-icons/lu";
@@ -65,6 +65,10 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='container  px-4 md:px-10'>

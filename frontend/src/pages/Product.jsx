@@ -101,7 +101,11 @@ const Product = () => {
   useEffect(() => {
     fetchProductData();
     fetchReviews();
-  }, [productId, products])
+  }, [productId, products]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Calculate discounted price
   const calculateDiscountedPrice = (originalPrice, discountPercentage) => {
