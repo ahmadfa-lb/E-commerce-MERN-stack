@@ -52,48 +52,106 @@ const sendEmailNotification = async (order) => {
 
 
 // Function to send Telegram notification
+// const sendTelegramNotification = async (order) => {
+//     try {
+//         // Create a bot instance
+//         const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+//         const chatId = process.env.TELEGRAM_CHAT_ID;
+
+//         // Debug logs
+//         console.log('Attempting to send Telegram notification');
+//         console.log('Bot token length:', process.env.TELEGRAM_BOT_TOKEN?.length);
+//         console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
+
+//         // Format order items for message
+//         const itemsList = order.items.map(item =>
+//             `- ${item.name} (Size: ${item.size}) x ${item.quantity}`
+//         ).join('\n');
+
+//         // Create message
+//         const message = `
+// 🛍️ *NEW ORDER RECEIVED* 🛍️
+
+// *Order ID:* ${order._id}
+// *Date:* ${new Date(order.date).toLocaleString()}
+// *Customer:* ${order.address.firstName} ${order.address.lastName}
+// *Amount:* $${order.amount}
+// *Payment Method:* ${order.paymentMethod}
+
+// *Items:*
+// ${itemsList}
+
+// *Shipping Address:*
+// ${order.address.street}, ${order.address.city}, ${order.address.country}
+// *Phone:* ${order.address.phone}
+
+// Please log in to the admin panel to process this order.
+// `;
+
+//         // Send message
+//         await bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
+//         console.log('Telegram notification sent successfully');
+//     } catch (error) {
+//         console.error('Error sending Telegram notification:', error);
+//         console.error('Error details:', error.message);
+//     }
+// };
+
+// Alternative function using fetch instead of the Telegram bot library
 const sendTelegramNotification = async (order) => {
     try {
-        // Create a bot instance
-        const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+        const botToken = process.env.TELEGRAM_BOT_TOKEN;
         const chatId = process.env.TELEGRAM_CHAT_ID;
+        
+        // Format message
+        const itemsList = order.items.map(item => 
+            `- ${item.name} (Size: ${item.size}) x ${item.quantity}`
+        ).join('\n');
 
-        // Debug logs
+        //         // Debug logs
         console.log('Attempting to send Telegram notification');
         console.log('Bot token length:', process.env.TELEGRAM_BOT_TOKEN?.length);
         console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
 
-        // Format order items for message
-        const itemsList = order.items.map(item =>
-            `- ${item.name} (Size: ${item.size}) x ${item.quantity}`
-        ).join('\n');
+        
+        const text = `
+NEW ORDER RECEIVED
 
-        // Create message
-        const message = `
-🛍️ *NEW ORDER RECEIVED* 🛍️
+Order ID: ${order._id}
+Date: ${new Date(order.date).toLocaleString()}
+Customer: ${order.address.firstName} ${order.address.lastName}
+Amount: $${order.amount}
+Payment Method: ${order.paymentMethod}
 
-*Order ID:* ${order._id}
-*Date:* ${new Date(order.date).toLocaleString()}
-*Customer:* ${order.address.firstName} ${order.address.lastName}
-*Amount:* $${order.amount}
-*Payment Method:* ${order.paymentMethod}
-
-*Items:*
+Items:
 ${itemsList}
 
-*Shipping Address:*
+Shipping Address:
 ${order.address.street}, ${order.address.city}, ${order.address.country}
-*Phone:* ${order.address.phone}
-
-Please log in to the admin panel to process this order.
+Phone: ${order.address.phone}
 `;
 
-        // Send message
-        await bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
-        console.log('Telegram notification sent successfully');
+        // Use fetch API instead of the bot library
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text
+            }),
+            timeout: 8000
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Telegram API error: ${response.status}`);
+        }
+        
+        console.log('Telegram notification sent successfully via fetch');
     } catch (error) {
-        console.error('Error sending Telegram notification:', error);
-        console.error('Error details:', error.message);
+        console.error('Error sending Telegram notification:', error.message);
     }
 };
 
@@ -120,7 +178,7 @@ const placeOrder = async (req, res) => {
         await userModel.findByIdAndUpdate(userId, { cartData: {} })
 
         // Send notification email after order is placed
-        await sendEmailNotification(newOrder);
+        // await sendEmailNotification(newOrder);
 
         // Send Telegram notification
         await sendTelegramNotification(newOrder);
