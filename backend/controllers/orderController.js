@@ -1,6 +1,7 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import nodemailer from "nodemailer";
+import TelegramBot from 'node-telegram-bot-api';
 
 
 // Function to send email notification
@@ -56,6 +57,7 @@ const sendTelegramNotification = async (order) => {
         // Create a bot instance
         const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
         const chatId = process.env.TELEGRAM_CHAT_ID;
+        console.log(chatId)
 
         // Format order items for message
         const itemsList = order.items.map(item =>
