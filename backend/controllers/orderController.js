@@ -178,7 +178,7 @@ const placeOrder = async (req, res) => {
         await userModel.findByIdAndUpdate(userId, { cartData: {} })
 
         // Send notification email after order is placed
-        // await sendEmailNotification(newOrder);
+        await sendEmailNotification(newOrder);
 
         // Send Telegram notification
         await sendTelegramNotification(newOrder);

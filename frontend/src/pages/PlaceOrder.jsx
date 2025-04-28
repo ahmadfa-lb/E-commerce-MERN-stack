@@ -242,7 +242,7 @@ const PlaceOrder = () => {
                             <div className="mt-8">
                                 <button 
                                     type="submit" 
-                                    className="w-full bg-gold text-white py-3 rounded-md font-medium transition duration-200 transform hover:translate-y-px focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    className="w-full bg-gold text-white py-3 rounded-md font-medium transition duration-200 transform hover:translate-y-px focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
                                 >
                                     PLACE ORDER
                                 </button>
