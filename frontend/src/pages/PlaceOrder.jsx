@@ -176,7 +176,7 @@ const PlaceOrder = () => {
                                     </div>
                                 </div>
                                 
-                                <div>
+                                {/* <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                                     <input 
                                         required 
@@ -186,8 +186,25 @@ const PlaceOrder = () => {
                                         value={formData.phone} 
                                         className="border border-gray-300 rounded-md py-2 px-3 w-full focus:ring-2 outline-none focus:ring-gold focus:border-gold transition" 
                                         type="number" 
-                                        placeholder="+961 0123456" 
+                                        placeholder="01234567" 
                                     />
+                                </div> */}
+                                                                <div>
+                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input 
+                                        required 
+                                        id="phone"
+                                        onChange={onChangeHandler} 
+                                        name="phone" 
+                                        value={formData.phone} 
+                                        className="border border-gray-300 rounded-md py-2 px-3 w-full focus:ring-2 outline-none focus:ring-gold focus:border-gold transition" 
+                                        type="tel" 
+                                        placeholder="03520863" 
+                                        pattern="[0-9]{8}"
+                                        title="Please enter a valid 8-digit Lebanese phone number"
+                                        maxLength="8"
+                                    />
+                                    <p className="mt-1 text-xs text-gray-500">Enter an 8-digit Lebanese phone number (e.g., 03520863)</p>
                                 </div>
                             </div>
                         </div>
