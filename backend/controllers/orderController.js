@@ -57,7 +57,11 @@ const sendTelegramNotification = async (order) => {
         // Create a bot instance
         const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
         const chatId = process.env.TELEGRAM_CHAT_ID;
-        console.log(chatId)
+
+        // Debug logs
+        console.log('Attempting to send Telegram notification');
+        console.log('Bot token length:', process.env.TELEGRAM_BOT_TOKEN?.length);
+        console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
 
         // Format order items for message
         const itemsList = order.items.map(item =>
@@ -89,6 +93,7 @@ Please log in to the admin panel to process this order.
         console.log('Telegram notification sent successfully');
     } catch (error) {
         console.error('Error sending Telegram notification:', error);
+        console.error('Error details:', error.message);
     }
 };
 
