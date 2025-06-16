@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from "@vercel/analytics/react"
 // import Verify from './pages/Verify'
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
   )
 }
